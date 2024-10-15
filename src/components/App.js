@@ -67,20 +67,22 @@ function App() {
 
 
      return (
-          <div className= "App" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-               <div id="review-heading">
-                    <h1>Reviews</h1>
-                    <div id="review-container">
-                         <img src={image} alt={name} id={`person-${index}-image`} style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%' }} />
-                         <h2 id={`person-${index}`}>{name}</h2>
-                         <h4>{title}</h4>
-                         <p>{quote}</p>
-                    </div>
-                    <button className="prev" onClick={prevReview}>Prev</button>
-                    <button className="next" onClick={nextReview}>Next</button>
-               </div>
+          <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+            <h1 id="review-heading" style={{ marginBottom: '20px', color: '#007bff' }}>Reviews</h1>
+            <div id="review-container" style={{ width: '300px', padding: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', borderRadius: '10px', backgroundColor: '#fff', textAlign: 'center' }}>
+              <div className="review">
+                <img src={image} alt={name} id={`person-${index}-image`} style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', marginBottom: '15px' }} />
+                <h2 id={`person-${index}`} style={{ marginBottom: '10px' }}>{name}</h2>
+                <h4 style={{ marginBottom: '15px', fontWeight: 'bold', color: '#333' }}>{title}</h4>
+                <p style={{ fontStyle: 'italic', color: '#555' }}>{quote}</p>
+              </div>
+              <div className="buttons" style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
+                <button className="prev" onClick={prevReview} style={{ padding: '10px', borderRadius: '5px', border: 'none', cursor: 'pointer', backgroundColor: '#007bff', color: '#fff' }}>Previous</button>
+                <button className="next" onClick={nextReview} style={{ padding: '10px', borderRadius: '5px', border: 'none', cursor: 'pointer', backgroundColor: '#007bff', color: '#fff' }}>Next</button>
+              </div>
+            </div>
           </div>
-     )
+        );
 }
 
 export default App;
